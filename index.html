@@ -11,22 +11,29 @@
   <body>
     <h1>List of to-do's</h1>
 
-  <form>
-    Add to do:
-    <input type="text"/>
 
-    Description:
-    <input type="text"  />
-
-    Completed?
-    <input type=Checkbox/>
-    <button />Delete to do</button>
-    <input type="submit" />
-  </form>
-
-
-    <ul className="todos">
-      <li>  </li>
+    <ul class="todos">
     </ul>
+
+
+    <ul>
+      <li> Buy Milk</li>
+        <button class="deleteTodo" onClick="deleteTodo()">Delete to-do</button>
+        <input type="button" class="completed" onClick="completed()" value="Not Completed.." />
+    </ul>
+
+    <form class="addTodo">
+      Add to-do:
+      <input type="text" class="todoBody" />
+      <input type="submit" />
+    </form>
+
+
   </body>
 </html>
+
+<!-- Description:
+<input type="text"  />
+
+Completed?
+<input type="checkbox"/> -->
