@@ -1,4 +1,9 @@
 
+document.addEventListener("DOMContentLoaded", function(event) {
+   deleteTodo();
+   completed();
+ });
+
 function createTodo() {
   $maryQuery(".addTodo").on("submit", e => {
     e.preventDefault();
@@ -21,22 +26,30 @@ function createTodo() {
     $maryQuery(".completed").on("click", e => {
       let value = e.target.value;
       value === "Completed!" ? e.target.setAttribute("value", "Not Completed..")  : e.target.setAttribute("value", "Completed!")
-    })
+    });
 
-  })
+  });
 }
 
+
 function deleteTodo(e) {
-  let target = $maryQuery(e.target)
-  $maryQuery(target).parent("li").remove();
+
+  // $maryQuery(".deleteTodo").click(function(e) {
+  //     $maryQuery(e.target).parent("li").remove();
+  // })
+
+  // debugger
+  $maryQuery(".deleteTodo").on("click", e => {
+    $maryQuery(e.target).parent("li").remove();
+  });
 }
 
 function completed(e) {
-  debugger
-  let target = $maryQuery(e.target)
-  debugger
-  // targetVal === "Completed!" ? e.target.setAttribute("value", "Not Completed..")  : e.target.setAttribute("value", "Completed!");
+  $maryQuery(".completed").on("click", e => {
+    e.target.value === "Completed!" ? e.target.setAttribute("value", "Not Completed..")  : e.target.setAttribute("value", "Completed!")
+  });
 }
+
 
 function initialize () {
   createTodo();

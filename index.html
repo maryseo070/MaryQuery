@@ -5,28 +5,30 @@
         <script type="text/javascript" src="./jql/main.js"></script>
         <script type="text/javascript" src="./jql/dom_node_collection.js"></script>
         <script type="text/javascript" src="./jql/jsfile.js"></script>
-
+        <link rel="stylesheet" href="./stylesheets/styling.css" />
     <title>maryQuery</title>
   </head>
   <body>
-    <h1>List of to-do's</h1>
+    <div class="all-todos-app">
+      <h1>List of to-do's</h1>
 
 
-    <ul class="todos">
-    </ul>
+      <ul class="todos">
+      </ul>
 
 
-    <ul>
-      <li> Buy Milk</li>
-        <button class="deleteTodo" onClick="deleteTodo()">Delete to-do</button>
-        <input type="button" class="completed" onClick="completed()" value="Not Completed.." />
-    </ul>
+      <ul>
+        <li> Buy Milk</li>
+        <button class="deleteTodo" onclick="deleteTodo()" style="font-family: Courier">Delete to-do</button>
+        <input type="button" class="completed" value="Not Completed.." onclick="completed()" style="font-family: Courier"/>
+      </ul>
 
-    <form class="addTodo">
-      Add to-do:
-      <input type="text" class="todoBody" />
-      <input type="submit" />
-    </form>
+      <form class="addTodo">
+        Add to-do:
+        <input type="text" class="todoBody" />
+        <input class="submit" type="submit" value="Submit" style="font-family: Courier"/>
+      </form>
+    </div>
 
 
   </body>
