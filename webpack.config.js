@@ -1,8 +1,8 @@
 module.exports = {
-  entry: "./main.js",
+  entry: "./jql/main.js",
   output: {
     path: __dirname,
-    filename: "./jquery_lite.js"
+    filename: "./jql/maryQuery_lite.js"
 	},
 	devtool: "source-map"
 };

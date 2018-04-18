@@ -1,4 +1,4 @@
-export default class DOMNodeCollection {
+class DOMNodeCollection {
 
   constructor (htmlelements) {
     this.els = htmlelements;
@@ -21,7 +21,7 @@ export default class DOMNodeCollection {
     if (this.els.length === 0) return ;
     if (typeof argument === 'object' &&
       !(argument instanceof DOMNodeCollection)) {
-        argument = $l(argument)
+        argument = $maryQuery(argument)
       }
 
     if (typeof argument === 'string') {
@@ -121,4 +121,5 @@ export default class DOMNodeCollection {
 }
 
 
-module.exports = DOMNodeCollection;
+// module.exports = DOMNodeCollection;
+// export default DOMNodeCollection;
