@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   $maryQuery(".todos").append(`
     <div>
-    <li>Buy Milk</li>
+    <li>Buy Milk
       <button class="deleteTodo" style="font-family: Courier">Delete to-do</button>
       <input type="button" class="completed" value="Not Completed.." style="font-family: Courier"></input>
+      </li>
     </div>
     `)
     $maryQuery(".deleteTodo").on("click", e => {
@@ -13,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $maryQuery(".completed").on("click", e => {
       let value = e.target.value;
       value === "Completed!" ? e.target.setAttribute("value", "Not Completed..")  : e.target.setAttribute("value", "Completed!")
+      $maryQuery(e.target).toggleClass("done");
+      $maryQuery(e.target.parentElement).toggleClass("parent-done")
     });
   });
 
@@ -25,9 +28,10 @@ function createTodo() {
     if (todo) {
       $maryQuery(".todos").append(`
         <div>
-        <li>${todo}</li>
+        <li>${todo}
           <button class="deleteTodo" style="font-family: Courier">Delete to-do</button>
-          <input type="button" class="completed" value="Not Completed.." style="font-family: Courier"></input>
+          <input type="button" class="completed" value="Not Completed..!" style="font-family: Courier"></input>
+          </li>
         </div>
         `);
     }
@@ -40,6 +44,9 @@ function createTodo() {
     $maryQuery(".completed").on("click", e => {
       let value = e.target.value;
       value === "Completed!" ? e.target.setAttribute("value", "Not Completed..")  : e.target.setAttribute("value", "Completed!")
+      $maryQuery(e.target).toggleClass("done");
+      $maryQuery(e.target.parentElement).toggleClass("parent-done")
+
     });
 
   });
